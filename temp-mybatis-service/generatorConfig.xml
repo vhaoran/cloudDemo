@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<classPathEntry
+		location="/usr/java/jdk/lib/mysql-connector-java-5.1.39.jar" />
+	<context id="context1" targetRuntime="MyBatis3">
+		<!-- <plugin type="com.itfsw.mybatis.generator.plugins.UpsertPlugin"> 支持upsertByExample，upsertByExampleSelective操作 
+			！需开启allowMultiQueries=true多条sql提交操作，所以不建议使用！ <property name="allowMultiQueries" 
+			value="true" /> </plugin> -->
+
+		<plugin type="com.wei.mybatis.plugin.WeiPlugin" />
+		<plugin type="com.wei.mybatis.plugin.WeiClientPlugin" />
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.0.120:3306/live?useSSL=false"
+			userId="root" password="password" />
+
+		<javaModelGenerator
+			targetPackage="com.yunchuang.mall.entity"
+			targetProject="temp-mybatis-service/src/main/java">
+
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+
+		<sqlMapGenerator targetPackage="mapper"
+			targetProject="temp-mybatis-service/src/main/resources">
+
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- ***************************************** -->
+		<!-- ***************************************** -->
+		<!-- ***************************************** -->
+		<!-- ***************************************** -->
+		<table tableName="viewstoreordershistotal" 
+		domainObjectName="ViewStoreOrdershisTotal"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false" enableSelectByPrimaryKey="true"
+			enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<!-- 生成的实体类属性使用数据库中的名字 -->
+			<property name="useActualColumnNames" value="true" />
+			<!-- 生成的实体类继承BaseEntity -->
+			<!-- <property name="rootClass" value="" /> -->
+		</table>
+
+		 
+
+	 
+ 
+
+
+	</context>
+</generatorConfiguration>
