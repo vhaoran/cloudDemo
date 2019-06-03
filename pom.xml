@@ -27,6 +27,7 @@
 
 
 		<module>temp-service</module>
+		<module>feign-service</module>
 		<module>temp-mybatis-service</module>
 
 
